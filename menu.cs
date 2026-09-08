@@ -1,3 +1,4 @@
+using utils.debug;
 namespace utils.menu;
 
 class Menu
