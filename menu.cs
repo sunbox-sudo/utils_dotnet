@@ -1,12 +1,16 @@
 using utils.debug;
 namespace utils.menu;
 
-class Menu
+public class Menu
 {
 	private string title;
 	private List<string> options;
 	private int selectedIndex;
 
+	/// <summary>
+	/// Initializes a new instance of the <see cref="Menu"/> calss.
+	/// </summary>
+	/// <param name="title">The title of menu that user should see</param>
 	public Menu(string title){
 
 		this.title = title;
@@ -14,6 +18,11 @@ class Menu
 		this.selectedIndex = 0;
 	}
 
+	/// <summary>
+	/// Initializes a new instance of the <see cref="Menu"/> calss.
+	/// </summary>
+	/// <param name="title">The title of menu that user should see</param>
+	/// <param name="options">The menu options list</param>
 	public Menu(string title, List<string> options){
 
 		this.title = title;
@@ -21,10 +30,18 @@ class Menu
 		this.selectedIndex = 0;
 	}
 
+	/// <summary>
+	/// Adds string to menu
+	/// </summary>
+	/// <param name="option">The string added to menu</param>
 	public void AddOption(string option){
 		options.Add(option);
 	}
 
+	/// <summary>
+	/// Removes a option at spesific index
+	/// </summary>
+	/// <param name="index"> The index that should be removed</param>
 	public bool RemoveOption(int index){
 		if (index < 0 || index >= options.Count){
 			Debug.Warn("Invalid index");
@@ -35,7 +52,7 @@ class Menu
 		return true;
 	}
 
-	public void Draw(){
+	void Draw(){
 		Console.Clear();
 		Console.WriteLine($"==={title}===\n");
 
@@ -54,6 +71,9 @@ class Menu
 		Console.WriteLine("\n[↑↓] Navigate   [Enter] Select   [Esc] Quit");
 	}
 
+	/// <summary>
+	/// Used to draw and get input from menu
+	/// </summary>
 	public int Run(){
 		if (options.Count == 0){
 			Console.WriteLine("Menu has no options");
