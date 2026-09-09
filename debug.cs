@@ -1,6 +1,6 @@
 namespace utils.debug;
 
-static class Debug
+public static class Debug
 {
 	static public void Clear(){
 		Console.Error.Flush();
