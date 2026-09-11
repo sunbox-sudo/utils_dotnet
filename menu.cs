@@ -26,7 +26,7 @@ public class Menu
 	public Menu(string title, List<string> options){
 
 		this.title = title;
-		this.options = new List<string>();
+		this.options = options;
 		this.selectedIndex = 0;
 	}
 
