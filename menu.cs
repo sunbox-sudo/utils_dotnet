@@ -26,7 +26,7 @@ public class Menu
 	public Menu(string title, List<string> options){
 
 		this.title = title;
-		this.options = options;
+		this.options = new List<string>();
 		this.selectedIndex = 0;
 	}
 
@@ -71,17 +71,14 @@ public class Menu
 		Console.WriteLine("\n[↑↓] Navigate   [Enter] Select   [Esc] Quit");
 	}
 
-
-	// Need Desciosn return
-	// if 0 should be exited suscesfull
-	// or if 0 should be index 0
 	/// <summary>
 	/// Used to draw and get input from menu
 	/// </summary>
+	/// <
 	public int Run(){
 		if (options.Count == 0){
 			Console.WriteLine("Menu has no options");
-			return -2;
+			return -1;
 		}
 
 		while (true){
