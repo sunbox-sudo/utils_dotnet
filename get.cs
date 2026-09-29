@@ -10,6 +10,7 @@ public class get{
 	}
 
 	public string cleanString(string? raw){
+		return "foo";
 
 	}
 }
