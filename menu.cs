@@ -211,12 +211,12 @@ public class MenuItem{
 	/// </summary>
 	public bool IsHidden;
 
-	internal MenuItem(string Name, Action Action){
+	public MenuItem(string Name, Action Action){
 		this.Name = Name;
 		this.Action = Action;
 	}
 
-	internal MenuItem(string Name, Action Action, bool IsHidden){
+	public MenuItem(string Name, Action Action, bool IsHidden){
 		this.Name = Name;
 		this.Action = Action;
 		this.IsHidden = IsHidden;
