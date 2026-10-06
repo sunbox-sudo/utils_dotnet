@@ -39,6 +39,7 @@ public abstract class Menu{
 	/// Gets and handles the input from the user.
 	/// </summary>
 	internal virtual void input(){
+		// intercept show the pressen button (true: not displayed, False: display)
 		ConsoleKey key = Console.ReadKey(intercept: true).Key;
 
 		switch (key){
@@ -51,12 +52,12 @@ public abstract class Menu{
 				index = Math.Min(maxIndex, index + 1);
 				break;
 			case ConsoleKey.Enter:
-				Debug.Log("menu.input. option selected " + index);
+				Debug.Info("menu.input. option selected " + index);
 				isRunning = false;
 				break;
 			case ConsoleKey.Escape:
 				isRunning = false;
-				Debug.Log($"menu.input. User exited from menu.");
+				Debug.Info($"menu.input. User exited from menu.");
 				break;
 			default:
 				Debug.Error("I DON'T EVEN KNOW HOW YOU ENDED UP HERE. " +
